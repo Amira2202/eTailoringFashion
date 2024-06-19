@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page - Online Tailoring</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b9d0e5;
+            background-image: url('images/u1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .sidebar {
+            background-color:rgb(7, 6, 6);
+            color: rgb(0, 0, 0);
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+        }
+
+        .logo {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            text-shadow: #000000;
+            text-rendering: optimizeLegibility;
+
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 10px;
+        }
+
+        .sidebar ul li a {
+            color: rgb(238, 32, 139);
+            text-decoration: none;
+            display: block;
+            font-size: 25px;
+            transition: all 0.3s ease; /* Add smooth transition effect */
+           
+        }
+
+        
+
+        .sidebar ul li a:hover {
+            background-color: #fbfdfe;
+        }
+        .sidebar ul li:hover {
+            transform: translateX(5px); /* Move item slightly to the right on hover */
+        }
+
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: #9a0758;
+            color: #000000;
+            border-radius: 50%;
+        }
+
+        .cart img {
+            width: 50px;
+            margin-right: 5px;
+        }
+
+        .cart span {
+            font-size: 18px;
+        }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .content.active {
+            margin-left: 250px; /* Adjust content margin when sidebar is active */
+        }
+
+        header {
+            text-align: center;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            color: #666;
+        }
+
+        .product-container {
+            
+            height: 1200px;
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+            scrollbar-width: 600px; /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer/Edge */
+          
+        }
+
+        .product-wrapper {
+            margin-right: 50px; /* Adjust spacing between products */
+            flex: 0 0 auto;
+            animation: scroll 4s linear infinite;
+            scroll-snap-align: start;
+            
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .product-card {
+            width: 250px; /* Adjust card width as needed */
+            background-color: transparent; /* Transparent white background */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-image {
+            background-color: transparent;
+            width: 250%;
+            height: 500%;
+            max-height: 500px; /* Adjust image height as needed */
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-info h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+        }
+
+        .product-info button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .product-info button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hide scrollbar for Chrome, Safari, and Opera */
+        .product-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .order-container {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto; /* Enable horizontal scrolling */
+            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer/Edge */
+            padding: 20px;
+        }
+
+        .order-card {
+            width: 300px; /* Adjust card width as needed */
+            background-color: white; /* Transparent white background */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            margin-right: 20px; /* Adjust spacing between orders */
+        }
+
+        .order-details h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .order-details p {
+            margin: 5px 0;
+        }
+
+        /* Hide scrollbar for Chrome, Safari, and Opera */
+        .order-container::-webkit-scrollbar {
+            display: none;
+        }
+        
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            filter: blur(5px);
+        }
+        
+
+    </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <source src="abstract_-_106193 (720p).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="sidebar">
+        <div class="logo">TwinFashion</div>
+        <ul>
+            <li><a href="measure.html" class="active">Blouse Stitching</a></li>
+            <li><a href="chudi.html">Chudi Stitching</a></li>
+            <li><a href="gown.php">Customized Gowns </a></li>
+            
+            <li><a href="designs.html">Fixed Size Chart</a></li>
+            <li><a href="logout.php">Log out</a></li>
+            <li><button onclick="goback()">Go Back</button>
+        </ul>
+    </div>
+
+  <!--  <div class="cart">
+        <img src="images/trolley.png" alt="Cart">
+        <span>0</span>
+    </div>-->
+
+    <div class="content">
+        <header>
+            <h1>Welcome to Twin Fashion</h1>
+            <h3>Get tailored clothing that fits perfectly!
+                Twin Fashion: Bespoke Creations for Dynamic Duos. Tailored Elegance for Twice the Impact. Where Style Finds its Symmetrical Match.
+            </h3>
+            <br><br>
+            <center>
+                <h1>Customized Dresses@Twin Fashion</h1>
+            </center>
+        </header>
+        <br><br><br>
+       
+        <section>
+            
+            <div class="product-container">
+                <div class="product-wrapper">
+                    <div class="product-card">
+                        <img src="images/b2.jpg" alt="Blouse 1" class="product-image">
+                        <div class="product-info">
+                            <h3>Designer Blouse</h3>
+                            <p>Stylish designer blouse with intricate embroidery.</p>
+                            <p><b>Price: Rs. 1500</b></p>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-container">
+                    <div class="product-wrapper">
+                        <div class="product-card">
+                            <img src="images/d1.jpg" alt="Blouse 1" class="product-image">
+                            <div class="product-info">
+                                <h3>Designer Blouse</h3>
+                                <p>Stylish designer blouse with intricate embroidery.</p>
+                                <p><b>Price: Rs. 1500</b></p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-container">
+                        <div class="product-wrapper">
+                            <div class="product-card">
+                                <img src="images/d2.jpg" alt="Blouse 1" class="product-image">
+                                <div class="product-info">
+                                    <h3>Designer Blouse</h3>
+                                    <p>Stylish designer blouse with intricate embroidery.</p>
+                                    <p><b>Price: Rs. 1500</b></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    <div class="product-container">
+                        <div class="product-wrapper">
+                            <div class="product-card">
+                                <img src="images/d3.jpg" alt="Blouse 1" class="product-image">
+                                <div class="product-info">
+                                    <h3>Designer Blouse</h3>
+                                    <p>Stylish designer blouse with intricate embroidery.</p>
+                                    <p><b>Price: Rs. 1500</b></p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                                
+                        <div class="product-container">
+                            <div class="product-wrapper">
+                                <div class="product-card">
+                                    <img src="images/b6.jpg" alt="Blouse 1" class="product-image">
+                                    <div class="product-info">
+                                        <h3>Designer Blouse</h3>
+                                        <p>Stylish designer blouse with intricate embroidery.</p>
+                                        <p><b>Price: Rs. 1500</b></p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                                        
+                            <div class="product-container">
+                                <div class="product-wrapper">
+                                    <div class="product-card">
+                                        <img src="images/d13.jpg" alt="Blouse 1" class="product-image">
+                                        <div class="product-info">
+                                            <h3>Designer Blouse</h3>
+                                            <p>Stylish designer blouse with intricate embroidery.</p>
+                                            <p><b>Price: Rs. 1500</b></p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                            
+               
+                                <div class="product-container">
+                                    <div class="product-wrapper">
+                                        <div class="product-card">
+                                            <img src="images/d18.jpg" alt="Blouse 1" class="product-image">
+                                            <div class="product-info">
+                                                <h3>Designer Blouse</h3>
+                                                <p>Stylish designer blouse with intricate embroidery.</p>
+                                                <p><b>Price: Rs. 1500</b></p>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                       
+
+                                        
+    
+
+                <!-- Add more blouse product cards here -->
+            </div>
+        </section>
+        
+
+        <!-- Add sections for churidars, gowns, lehengas, etc., with similar structures -->
+
+    </div>
+
+    <footer>
+        <p>&copy;  All rights reserved by TwinFashion.</p>
+    </footer>
+<script>
+    function goback()
+    {
+        window.history.back();
+    }
+</script>
+</body>
+</html>
