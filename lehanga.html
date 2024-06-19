@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lehenga Stitching Form</title>
+    <style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Set background color */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    width: 100%;
+    padding: 40px; /* Increased padding for better spacing */
+    background-color: #fff; /* Set background color */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(148, 3, 99, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px; /* Added margin bottom for better spacing */
+}
+
+.fields label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px; /* Added margin bottom for better spacing */
+}
+
+.fields input[type="text"],
+.fields input[type="email"],
+.fields input[type="tel"],
+.fields input[type="number"],
+.fields select,
+.fields textarea {
+    width: calc(100% - 20px); /* Adjusted width */
+    padding: 15px; /* Increased padding */
+    border: 1px solid #ccc; /* Changed border color */
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Added margin bottom for better spacing */
+    transition: border-color 0.3s ease-in-out; /* Added transition effect */
+}
+
+.fields input[type="text"]:focus,
+.fields input[type="email"]:focus,
+.fields input[type="tel"]:focus,
+.fields input[type="number"]:focus,
+.fields select:focus,
+.fields textarea:focus {
+    border-color: #d20a78; /* Changed border color on focus */
+}
+
+.fields select {
+    appearance: none; /* Remove default appearance */
+    padding-right: 30px; /* Added padding for dropdown arrow */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23d20a78" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41zM12 4L0 16h24z"/><path fill="none" d="M0 0h24v24H0z"/></svg>'); /* Add custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+}
+
+.design-images h3 {
+    text-align: center;
+    margin-bottom: 20px; /* Added margin bottom for better spacing */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px; /* Added margin bottom for better spacing */
+}
+
+.image-container label {
+    margin: 10px; /* Added margin for better spacing between images */
+    cursor: pointer;
+}
+
+.image-container img {
+    width: 200px; /* Increased image size */
+    height: 200px; /* Increased image size */
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out; /* Added transition effect */
+}
+
+.image-container img:hover {
+    transform: scale(1.1); /* Scale up image on hover */
+}
+
+input[type="submit"] {
+    background-color: #d20a78;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out; /* Added transition effect */
+}
+
+input[type="submit"]:hover {
+    background-color: #be006c; /* Change background color on hover */
+}
+.gobtn button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .gobtn button:hover {
+            background-color: #45a049;
+        }
+</style>
+</head>
+<body>
+    <form action="lehanga.php" method="post">
+
+    <div class="background-container"></div>
+<div class="container">
+    <div class="form-container">
+        <h2>Customize Your Lehenga</h2>
+        <div class="fields">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="waist">Waist (in inches):</label>
+            <input type="number" id="waist" name="waist" required>
+
+            <label for="hip">Hip (in inches):</label>
+            <input type="number" id="hip" name="hip" required>
+
+            <label for="length">Length (in inches):</label>
+            <input type="number" id="length" name="length" required>
+
+            <label for="blouse">Blouse Length (in inches):</label>
+            <input type="number" id="blouse" name="blouse" required>
+
+            <label for="neck">Neck (in inches):</label>
+            <input type="number" id="neck" name="neck" required>
+
+            <label for="sleeve">Sleeve Length (in inches):</label>
+            <input type="number" id="sleeve" name="sleeve" required>
+
+            <label for="fabric">Fabric:</label>
+            <select id="fabric" name="fabric" required>
+                <option value="silk">Silk</option>
+                <option value="cotton">Cotton</option>
+                <option value="georgette">Georgette</option>
+                <!-- Add more fabric options as needed -->
+            </select>
+
+            <label for="embroidery">Embroidery Type:</label>
+            <select id="embroidery" name="embroidery" required>
+                <option value="zari">Zari</option>
+                <option value="sequins">Sequins</option>
+                <option value="threadwork">Threadwork</option>
+                <!-- Add more embroidery options as needed -->
+            </select>
+        </div>
+        <div class="design-images">
+            <h3>Select Lehenga Design:</h3>
+            <div class="image-container">
+                <label for="image1">
+                    <img src="images/lehanga/l1.jpg" alt="Design 1" width="150" height="150">
+                    <input type="radio" id="image1" name="selectedDesign" value="design1.jpg">
+                </label>
+                <label for="image2">
+                    <img src="images/lehanga/l2.jpg" alt="Design 2" width="150" height="150">
+                    <input type="radio" id="image2" name="selectedDesign" value="design2.jpg">
+                </label>
+                <label for="image2">
+                    <img src="images/lehanga/l3.jpg" alt="Design 2" width="150" height="150">
+                    <input type="radio" id="image2" name="selectedDesign" value="design2.jpg">
+                </label>
+                
+
+                <!-- Add more design images and radio buttons as needed -->
+               
+            </div>
+            <input type="submit" value="Submit">
+        </div><br><br>
+        <div class="gobtn"><button onclick="goback()">GO Back</button></div>
+            <p style="text-align: right;">Size Chart: <a href="lehenga_sizechart.html">View Size Chart</a></p>
+    </div>
+</div>
+
+</form>
+        </div>
+    </div>
+</body>
+</html>
+

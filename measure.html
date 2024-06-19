@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order blouse Stitching</title>
+    <style> /* Form container */
+    body{
+     
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+      form {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color:transparent;
+          border-radius: 40px;
+          box-shadow: 0 4px 8px rgba(9, 8, 8, 0.1);
+      }
+      .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/h.webp'); /* Add your background image URL here */
+      background-size: cover;
+      filter: blur(20px); /* Add blur effect */
+      z-index: -1; /* Set z-index to position behind other content */
+    }
+      /* Headings */
+      h1 {
+          text-align: center;
+          color: #333;
+      }
+      
+      /* Labels */
+      label {
+          display: block;
+          margin-bottom: 5px;
+          color: #050505;
+      }
+      
+      /* Text inputs, email, tel, textarea */
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+      
+      /* Select */
+      select {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 15px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #fff;
+          color: #333;
+      }
+      
+      /* Submit button */
+      input[type="submit"] {
+         
+          width: 100%;  
+          padding: 20px;
+          border: none;
+          border-radius: 5px;
+          background-color: #e80c7e;
+          color: #fff;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+      }
+      
+      input[type="submit"]:hover {
+          background-color: #060506;
+      }
+      
+      
+
+
+  .image-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            margin: 0 10px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        .image-container img:hover {
+            border-color: #007bff; /* Change border color on hover */
+        }
+        .form-group input[type="number"] {
+    font-size: 18px; /* Increase font size */
+    padding: 10px; /* Increase padding */
+    width: 200px; /* Increase width */
+  }
+      /* Add more styling as needed */
+
+      /* Go back button */
+
+      .gobtn button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .gobtn button:hover {
+            background-color: #45a049;
+        }
+      </style>
+
+</head>
+<body>
+  <div class="background-container"></div>
+
+<h1>Fill the Required Details for your Dream Blouse</h1>
+
+<form action="blouse.php" method="post"> <!-- Replace "submit.php" with your form handling script -->
+
+ 
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="measurements">Measurements:</label>
+    <div class="form-group">
+      <label for="bust">Bust:</label>
+<select id="bust" name="bust" required>
+   
+    <option value="30">30 inches</option>
+    <option value="32">32 inches</option>
+    <option value="34">34 inches</option>
+    <option value="36">36 inches</option>
+    <option value="38">38 inches</option>
+    <option value="40">40 inches</option>
+    <option value="42">42 inches</option>
+    <option value="44">44 inches</option>
+    <option value="46">46 inches</option>
+    <!-- Add more options as needed -->
+</select>
+
+     <!-- <label for="bust">Bust:</label>
+      <input type="number" id="bust" name="bust" placeholder="in inches" required>-->
+    </div>
+    <div class="form-group">
+      <label for="waist">Waist:</label>
+      <select id="waist" name="waist" required>
+        
+        <option value="24">24 inches</option>
+        <option value="25">25 inches</option>
+        <option value="26">26 inches</option>
+        <option value="27">27 inches</option>
+        <option value="28">28 inches</option>
+        <option value="29">29 inches</option>
+        <option value="30">30 inches</option>
+        <option value="31">31 inches</option>
+        <option value="32">32 inches</option>
+    </div>
+    
+    <div class="form-group">
+      <label for="shoulder">Shoulder:</label>
+      <input type="number" id="shoulder" name="shoulder" placeholder="in inches" required>
+    </div>
+
+    <div class="form-group">
+      <label for="sleeve">Sleeve Length:</label>
+      <input type="number" id="sleeve" name="sleeve" placeholder="in inches" required>
+    </div>
+    <div class="form-group">
+      <label for="sleeve">Front Neck Dept:</label>
+      <input type="number" id="fneck" name="frontneck" placeholder="in inches" required>
+    </div>
+    <div class="form-group">
+      <label for="sleeve">Back Neck Depth:</label>
+      <input type="number" id="bneck" name="backneck" placeholder="in inches" required>
+    </div>
+    <div class="form-group">
+      <label for="sleeve">Blouse Length :</label>
+      <input type="number" id="blen" name="blouselength" placeholder="in inches" required>
+    </div>
+    <div class="form-group">
+      <label for="sleeve">Sleeve (around):</label>
+      <input type="number" id="sleevearound" name="sleevearound" placeholder="in inches" required>
+    </div>
+    <div class="form-group">
+      <label for="sleeve">Armhole (around):</label>
+      <input type="number" id="armhole" name="armhole" placeholder="in inches" required>
+    </div>
+  
+    <label for="fabric">Fabric Preferences:</label>
+    <select id="fabric" name="fabric">
+        <option value="cotton">Cotton</option>
+        <option value="silk">Silk</option>
+        <option value="linen">Linen</option>
+        <!-- Add more fabric options as needed -->
+    </select>
+
+    <label for="neck_design">Neck Design:</label>
+    <select id="neck_design" name="neck_design" style="width: 100%;">
+        <option value="round" data-image="round-neck.jpg">Round Neck</option>
+        <option value="v-neck" data-image="v-neck.jpg">V-neck</option>
+        <option value="boat-neck" data-image="boat-neck.jpg">Boat Neck</option>
+        <!-- Add more neck design options as needed -->
+    </select><br><br>
+
+   
+
+    <label for="design">Design Choices:</label>
+    
+    <div class="image-container">
+      <label for="image1">
+          <img src="images/bl1.jpg" alt="Image 1" width="150" height="150">
+          <input type="radio" id="image1" name="selectedImage" value="image1.jpg">
+      </label>
+      <label for="image2">
+          <img src="images/bl2.jpg" alt="Image 2" width="150" height="150">
+          <input type="radio" id="image2" name="selectedImage" value="image2.jpg">
+      </label>
+      <label for="image2">
+        <img src="images/bl3.jpg" alt="Image 2" width="150" height="150">
+        <input type="radio" id="image2" name="selectedImage" value="image2.jpg">
+    </label>
+    <label for="image2">
+      <img src="images/bl4.jpg" alt="Image 2" width="150" height="150">
+      <input type="radio" id="image2" name="selectedImage" value="image2.jpg">
+  </label>
+  <label for="image2">
+    <img src="images/bl5.jpg" alt="Image 2" width="150" height="150">
+    <input type="radio" id="image2" name="selectedImage" value="image2.jpg">
+</label>
+
+      <!-- Add more images and radio buttons as needed -->
+  </div>
+
+
+
+    <label for="additional">Additional Comments:</label>
+    <textarea id="additional" name="additional" rows="4"></textarea>
+
+    <input type="submit" value="Submit">
+    <br><br>
+   <div class="gobtn"> <button onclick="goBack()">Go Back</button> </div>
+    <p style="text-align: right;">Size Chart: <a href="designs.html">View Size Chart</a></p>
+</form>
+<script>
+  function goBack() {
+      window.history.back();
+  }
+</script>
+</div>
+</body>
+</html>
+
+

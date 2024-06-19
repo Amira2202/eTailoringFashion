@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customized Gown Stitching Form</title>
+<style>
+  /* Add your CSS styles here */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    margin-top: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  /* Go back button */
+  button.goBack {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  button.goBack:hover {
+    background-color: #555;
+  }
+</style>
+</head>
+<body>
+
+<h1>Customized Gown Stitching Form</h1>
+
+<form id="gownStitchingForm">
+  <label for="customerName">Customer Name:</label>
+  <input type="text" id="customerName" name="customerName" required><br><br>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+  
+  <label for="phone">Phone:</label>
+  <input type="tel" id="phone" name="phone" required><br><br>
+  
+  <label for="address">Address:</label><br>
+  <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+  
+  <label for="gownType">Gown Type:</label>
+  <select id="gownType" name="gownType" required>
+    <option value="Evening Gown">Evening Gown</option>
+    <option value="Ball Gown">Ball Gown</option>
+    <option value="Mermaid Gown">Mermaid Gown</option>
+    <!-- Add more options as needed -->
+  </select><br><br>
+  
+  <label for="measurements">Measurements:</label><br>
+  <textarea id="measurements" name="measurements" rows="4" cols="50" required></textarea><br><br>
+  
+  <label for="fabricType">Fabric Type:</label>
+  <select id="fabricType" name="fabricType" required>
+    <option value="Silk">Silk</option>
+    <option value="Satin">Satin</option>
+    <option value="Chiffon">Chiffon</option>
+    <!-- Add more options as needed -->
+  </select><br><br>
+  
+  <label for="additionalInstructions">Additional Instructions:</label><br>
+  <textarea id="additionalInstructions" name="additionalInstructions" rows="4" cols="50"></textarea><br><br>
+  
+  <input type="submit" value="Submit Order">
+   <!-- Go back button -->
+</form>
+
+
+
+</body>
+</html>
