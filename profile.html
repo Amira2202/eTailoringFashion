@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Profile Management</title>
+  <link rel="stylesheet" href="styles.css">
+  <style> body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+button#editButton {
+  background-color: #ffc107;
+}
+
+button#editButton:hover {
+  background-color: #e0a800;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Customer Profile</h1>
+    <form action="process.php" method="post">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" name="submit">Save Profile</button>
+        <button type="button" id="editButton" onclick="toggleEdit()">Edit Profile</button>
+      </div>
+      <div class="form-group">
+        <label for="measurements">Measurements:</label>
+        <input type="text" id="measurements" name="measurements">
+        <small>Provide measurements in inches or centimeters</small>
+      </div>
+      <div class="form-group">
+        <label for="style">Preferred Style:</label>
+        <select id="style" name="style">
+          <option value="casual">Casual</option>
+          <option value="formal">Formal</option>
+          <option value="traditional">Traditional</option>
+          <option value="party">Party Wear</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="orderHistory">Order History:</label>
+        <textarea id="orderHistory" name="orderHistory" rows="4" readonly></textarea>
+        <small>This will display the order history of the customer</small>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function toggleEdit() {
+      var inputs = document.getElementsByTagName('input');
+      var textarea = document.getElementsByTagName('textarea')[0];
+      var select = document.getElementsByTagName('select')[0];
+
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].readOnly = !inputs[i].readOnly;
+      }
+
+      for (var i = 0; i < textarea.length; i++) {
+        textarea[i].readOnly = !textarea[i].readOnly;
+      }
+
+      select.disabled = !select.disabled;
+
+      var editButton = document.getElementById('editButton');
+      editButton.innerText = editButton.innerText === 'Edit Profile' ? 'Cancel' : 'Edit Profile';
+    }
+    
+  </script>
+</body>
+</html>
+
