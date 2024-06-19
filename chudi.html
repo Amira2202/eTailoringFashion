@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churidar Stitching Form</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/h.webp'); /* Add your background image URL here */
+      background-size: cover;
+      filter: blur(20px); /* Add blur effect */
+      z-index: -1; /* Set z-index to position behind other content */
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        display: flex;
+        justify-content: center;
+    }
+    .form-container {
+        width: 100%;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(148, 3, 99, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    form {
+        display: grid;
+        grid-gap: 10px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+        width: calc(100% - 30px); /* Adjusted width */
+        padding: 10px;
+        border: 1px solid #be006c;
+        border-radius: 5px;
+        box-sizing: border-box; /* Ensures padding and border are included in the width */
+    }
+    input[type="submit"] {
+        background-color: #d20a78;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="container">
+        <div class="form-container">
+            <h2>Customize Your Chudi (Salwaar)</h2>
+            <form action="chudi.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="bust">Bust (in inches):</label>
+                <input type="number" id="bust" name="bust" required>
+
+                <label for="waist">Waist (in inches):</label>
+                <input type="number" id="waist" name="waist" required>
+
+                <label for="hips">Hips (in inches):</label>
+                <input type="number" id="hips" name="hips" required>
+
+                <label for="shoulder">Shoulder (in inches):</label>
+                <input type="number" id="shoulder" name="shoulder" required>
+
+                <label for="armhole">Armhole (in inches):</label>
+                <input type="number" id="armhole" name="armhole" required>
+
+                <label for="sleevetype">Sleeve Type:</label>
+                <select id="sleevetype" name="sleevetype" required>
+                    <option value="short sleeve">Short Sleeve</option>
+                    <option value="3/4th sleeve">3/4th Sleeve</option>
+                    <option value="fullhand">Full Sleeve</option>
+                </select>
+
+                <label for="backneck">Back Neck (in inches):</label>
+                <input type="number" id="backneck" name="backneck" required>
+
+                <label for="frontneck">Front Neck (in inches):</label>
+                <input type="number" id="frontneck" name="frontneck" required>
+
+                <label for="chudilength">Chudi Length (in inches):</label>
+                <input type="number" id="chudilength" name="chudilength" required>
+
+                <label for="chuditype">Chudi Type:</label>
+                <select id="chuditype" name="chuditype" required>
+                    <option value="sideopen">Side Open</option>
+                    <option value="closedtype">Closed Type</option>
+                </select>
+
+                <label for="fabric">Fabric:</label>
+                <select id="fabric" name="fabric" required>
+                    <option value="cotton">Cotton</option>
+                    <option value="silk">Silk</option>
+                    <option value="linen">Linen</option>
+                    <!-- Add more fabric options as needed -->
+                </select>
+
+                <label for="design">Design Preference:</label>
+                <select id="design" name="design" required>
+                    <option value="" disabled selected>Select Design</option>
+                    <option value="images/abt.jpg">Normal</option>
+                    <option value="design2.jpg">Party</option>
+                    <option value="design3.jpg">Classic</option>
+                    <!-- Add more design options as needed -->
+                </select>
+
+                <input type="submit" value="Submit">
+
+                
+            </form>
+            <br><br>
+            <button onclick="goBack()">Go Back</button> 
+            <p style="text-align: right;">Size Chart: <a href="designs.html">View Size Chart</a></p>
+
+            
+        </div>
+        </div>
+       
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+      </script>
+</body>
+</html>

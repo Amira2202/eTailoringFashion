@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url('images/twinbg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 2.3;
+}
+
+    .user-logo {
+      position: absolute;
+      top: 5px;
+      right: 50px;
+    }
+
+    /* Adjust this style according to your logo */
+    .user-logo img {
+      width: 70px; /* Adjust the width as needed */
+      height: auto;
+      border-radius: 50%; /* If your logo is circular */
+    }
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/* Sidebar */
+.sidenav {
+    height: 100%;
+    width: 250px; /* Adjust the width as needed */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111; /* Sidebar background color */
+    overflow-x: hidden;
+    padding-top: 60px;
+}
+
+/* Sidebar links */
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+}
+
+/* Dropdown menu */
+.sidenav ul ul {
+    display: none; /* Hide dropdown menus by default */
+    background-color: #222; /* Dropdown background color */
+}
+
+.sidenav ul li:hover ul {
+    display: block; /* Display dropdown menu on hover */
+}
+
+/* Style for dropdown links */
+.sidenav ul ul li a {
+    padding-left: 30px; /* Adjust spacing for dropdown items */
+}
+
+/* Close button */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Close button on hover */
+.sidenav .closebtn:hover {
+    color: #fff;
+}
+
+/* Style for dropdown arrow */
+.sidenav ul ul::before {
+    content: "\25BC"; /* Unicode for downward arrow */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Style for active link */
+.sidenav a.active {
+    background-color: #4CAF50; /* Active link background color */
+    color: white;
+}
+.background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/h.webp'); /* Add your background image URL here */
+      background-size: cover;
+      filter: blur(20px); /* Add blur effect */
+      z-index: -1; /* Set z-index to position behind other content */
+    }
+</style>
+</head>
+<body><div class="background-container"></div>
+ </div> 
+    <!-- User Logo -->
+    <div class="user-logo">
+      <img src="#" alt="User Logo">
+    </div>
+    
+
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <ul>
+       
+        <li>
+          <a href="vv.php">ORDERED DETAILS</a>
+      </li>
+          <li>
+              <a href="#">MEASUREMENT DETAILS</a>
+              <ul>
+                  <li><a href="adminblouse.php">BLOUSE RECORDS</a></li>
+                  <li><a href="adminchudi.php">CHUDI RECORDS</a></li>
+                  <li><a href="admingown.php">GOWN RECORDS</a></li>
+                  <!-- Add more design options as needed -->
+              </ul>
+          </li>
+          <li>
+            <a href="adminOrders.php">ORDERED DETAILS</a>
+        </li>
+          <li>
+              <a href="#">FEEDBACK RECORDS</a>
+              <ul>
+                  <li><a href="adminfeedback.php">View CUSTOMER Feedback</a></li>
+        
+                  <!-- Add more feedback options as needed -->
+              </ul>
+          </li>
+      </ul>
+
+  </div>
+  
+
+
+<span style="font-size:40px;cursor:pointer" onclick="openNav()">&#9776; WELCOME ADMIN</span>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+   
+</body>
+</html> 
